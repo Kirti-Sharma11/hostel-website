@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #d8dcde, #5d96cc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-box {
+    width: 420px;
+    padding: 35px;
+    background-color: white;
+    border: 4px ridge blue;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px gray;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    width: 110px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.captcha-box {
+    font-weight: bold;
+    font-size: 18px;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.captcha-box input {
+    width: 60px;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.links a {
+    text-decoration: none;
+    color: blue;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+<form onsubmit="return validateLogin()">
+
+<h1>Login Page</h1>
+
+<div class="input-group">
+<label>Username</label>
+<input type="text" name="student_name" placeholder="Enter your name" required>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" name="password" placeholder="Enter password" required minlength="8"> 
+
+</div>
+<input type="checkbox" onclick="togglePassword()"> Show Password
+<div class="input-group">
+<label>Captcha</label>
+<div class="captcha-box">
+<span id="num1"></span> + <span id="num2"></span> =
+<input type="number" id="captchaInput" required>
+</div>
+</div>
+
+<input type="submit" value="Login">
+
+<div class="links">
+<a href="signup.html">Signup</a>
+<a href="forgot.html">Forgot Password?</a>
+</div>
+
+</form>
+</div>
+
+<script>
+let num1, num2, correctAnswer;
+function togglePassword() {
+    let pass = document.getElementsByName("password")[0];
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+function generateCaptcha() {
+    num1 = Math.floor(Math.random() * 10) + 1;
+    num2 = Math.floor(Math.random() * 10) + 1;
+    correctAnswer = num1 + num2;
+
+    document.getElementById("num1").innerText = num1;
+    document.getElementById("num2").innerText = num2;
+}
+
+function validateLogin() {
+    let user = document.getElementsByName("student_name")[0].value.trim();
+    let pass = document.getElementsByName("password")[0].value.trim();
+
+    let storedUser = localStorage.getItem("username");
+    let storedPass = localStorage.getItem("password");
+
+    if (!user || !pass) {
+        alert("Please fill all fields");
+        return false;
+    }
+
+    if (user === storedUser && pass === storedPass) {
+        if (validateCaptcha()) {
+            alert("Login Successful");
+            window.location.href = "leave.html"; // manual redirect
+            return false;
+        }
+    } else {
+        alert("Wrong username or password");
+        return false;
+    }
+}
+
+function validateCaptcha() {
+    let userAnswer = document.getElementById("captchaInput").value;
+
+    if (parseInt(userAnswer) === correctAnswer) {
+        return true;
+    }
+    else {
+        alert("Captcha incorrect. Try again.");
+        generateCaptcha();
+        return false;
+    }
+}
+
+generateCaptcha();
+</script>
+
+</body>
+</html>

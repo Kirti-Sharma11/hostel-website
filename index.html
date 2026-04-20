@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalpana Chawla Hostel | NIT Kurukshetra</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2>Kalpana Chawla Hostel</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="login.html">Leave Form</a>
+        <a href="#map">Map</a>
+    </div>
+</nav>
+<header>
+    <picture>
+        <source media="(max-width:600px)" srcset="cauvery-mobile.jpg">
+        <source media="(min-width:601px)" srcset="kalpana.jpeg">
+        <img src="kalpana.jpeg" alt="Hostel">
+    </picture>
+    <div class="overlay">
+        <h1>Kalpana Chawla Hostel</h1>
+        <p>Safe • Secure • Comfortable Living</p>
+    </div>
+</header>
+
+<div class="container">
+<section>
+<h2>Facilities</h2>
+<div class="grid">
+    <div class="card">Single Rooms</div>
+    <div class="card">Night Canteen</div>
+    <div class="card">24×7 Warden</div>
+    <div class="card">Hot Water</div>
+    <div class="card">Cleaning</div>
+    <div class="card">Security</div>
+</div>
+</section>
+
+<section>
+<h2>Hostel Services</h2>
+<ul class="list">
+    <li>Common mess</li>
+    <li>Wi-Fi</li>
+    <li>Laundry</li>
+    <li>Maggie hotspot</li>
+</ul>
+</section>
+
+<section>
+<h2>Rules & Regulations</h2>
+<ol class="list">
+    <li>Heating appliances not allowed</li>
+    <li>In-time: 8:30 PM</li>
+    <li>Men entry prohibited</li>
+</ol>
+</section>
+
+<section>
+<h2>Room Availability</h2>
+<table>
+<tr>
+    <th>Room Type</th>
+    <th>Available</th>
+</tr>
+<tr>
+    <td>Single</td>
+    <td>Yes</td>
+</tr>
+</table>
+</section>
+
+<section>
+<h2>Student Information</h2>
+<form class="form">
+
+<input type="text" placeholder="Student Name" required>
+<input type="text" placeholder="Roll Number" required>
+<input type="email" placeholder="Email" required>
+<input type="text" placeholder="Course">
+
+<label>Select Hostel</label>
+<input list="hostels" name="hostel">
+<datalist id="hostels">
+    <option value="Cauvery">
+    <option value="Kalpana">
+    <option value="Alaknanda">
+</datalist>
+
+<input type="submit" value="Submit">
+
+</form>
+</section>
+
+<section>
+<h2>Campus Utility Map</h2>
+<p>Click on objects to explore</p>
+
+<img src="map.jpg" usemap="#workmap" width="600" alt="Campus Map">
+
+<map name="workmap">
+    <area shape="rect" coords="4,4,46,158"
+          href="https://www.flipkart.com/laptops-store" target="_blank">
+
+    <area shape="poly" coords="74,59,122,54,79,152,117,154"
+          href="https://www.flipkart.com/mobile-phones-store" target="_blank">
+
+    <area shape="rect" coords="141,67,145,155"
+          href="https://www.amazon.in/s?k=pen" target="_blank">
+
+    <area shape="circle" coords="227,84,70"
+          href="https://www.flipkart.com/headphones" target="_blank">
+</map>
+</section>
+
+<section id="map">
+<h2>Hostel Location</h2>
+<iframe 
+src="https://www.google.com/maps?q=Kalpana+Chawla+Hostel+NIT+Kurukshetra&output=embed">
+</iframe>
+</section>
+
+<section>
+<a href="login.html" class="btn">Apply for Leave</a>
+</section>
+
+</div>
+
+<footer>
+© 2026 NIT Kurukshetra | Cauvery Hostel
+</footer>
+
+</body>
+</html>
+```

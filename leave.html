@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leave Application</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://cdn.slidesharecdn.com/ss_thumbnails/leavepolicyattendancepolicy-230606223400-e1c5a922-thumbnail.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(4px);
+    z-index: -1;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.form-box {
+    width: 400px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1a252f;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<h2>Leave Application</h2>
+
+<div class="form-box">
+<form>
+
+<label>Student Name:</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Student ID:</label>
+<input type="text" placeholder="Enter your student ID" required>
+
+<label>Phone No:</label>
+<input type="tel" placeholder="+91-12345-5678" required>
+
+<label>Leave Start Date:</label>
+<input type="date" required>
+
+<label>Leave End Date:</label>
+<input type="date" required>
+
+<label>Reason for Leave:</label><br>
+<input type="radio" name="reason"> Medical<br>
+<input type="radio" name="reason"> Urgent<br>
+<input type="radio" name="reason"> Marriage<br>
+<input type="radio" name="reason"> Other<br>
+
+<br>
+
+<label>Location:</label><br>
+<input type="checkbox"> Chandigarh<br>
+<input type="checkbox"> Shimla<br>
+<input type="checkbox"> Amritsar<br>
+<input type="checkbox"> Jibhi<br>
+
+<br>
+
+<button type="submit">Submit</button>
+
+</form>
+</div>
+
+</body>
+</html>
